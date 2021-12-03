@@ -225,18 +225,18 @@ let theNumber = 100020003000;
 // console.log([theNumber.join("")]);
 console.log(+[...new Set(theNumber.toString())].sort().join(""));
 
-let theName = "Elzero";
-let s = Array.from(theName);
-console.log(s);
-s = theName.split("");
-console.log(s);
-let f = [...theName];
-console.log(f);
-let n = [...new Set(theName)];
-console.log(n);
-let five = Object.values(theName);
+// let theName = "Elzero";
+// let s = Array.from(theName);
+// console.log(s);
+// s = theName.split("");
+// console.log(s);
+// let f = [...theName];
+// console.log(f);
+// let n = [...new Set(theName)];
+// console.log(n);
+// let five = Object.values(theName);
 
-console.log(five);
+// console.log(five);
 
 let chars = ["A", "B", "C", "D", "E", 10, 15, 6];
 chars.copyWithin(-3, 0, 2);
