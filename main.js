@@ -254,3 +254,33 @@ console.log(numsOne);
 let n1 = [10, 30, 10, 20];
 let n2 = [30, 20, 10];
 console.log([...n1, ...n2].length * Math.max(...n2));
+// ------------------------------
+
+// The End Of The Year Date To Countdown To
+// 1000 milliseconds = 1 Second
+
+// console.log(countDownDate);
+
+let counter = setInterval(() => {
+  let countDownTime = new Date("Dec 30, 2021 05:04:59").getTime();
+  let timeNow = new Date().getTime();
+  let dateDiff = countDownTime - timeNow;
+
+  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+
+  document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
+
+  document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+
+  document.querySelector(".minutes").innerHTML =
+    minutes < 10 ? `0${minutes}` : minutes;
+
+  document.querySelector(".seconds").innerHTML =
+    seconds < 10 ? `0${seconds}` : seconds;
+  if (dateDiff < 0) {
+    clearInterval(counter);
+  }
+}, 1000);
